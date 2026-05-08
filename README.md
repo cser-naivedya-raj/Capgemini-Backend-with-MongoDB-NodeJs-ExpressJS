@@ -1,19 +1,19 @@
-# 🚀 Capgemini Backend Training — MongoDB · Node.js · Express.js
+# 🚀 Capgemini MERN Training — MongoDB · Node.js · Express.js · React
 
-> A hands-on training repository from the **Capgemini Backend Development Program**, covering core backend technologies: **MongoDB**, **Node.js**, and **Express.js**. This repo serves as a day-by-day practice log and reference guide built during live training sessions.
+> A hands-on training repository from the **Capgemini Full-Stack Development Program**, covering the complete MERN stack: **MongoDB**, **Node.js**, **Express.js**, and **React**. This repo serves as a day-by-day practice log and reference guide built during live training sessions.
 
 ---
 
 ## 📌 Description
 
-This repository contains all exercises, examples, and mini-projects developed as part of the Capgemini backend training curriculum. It is structured by technology and session date, making it easy to trace learning progress and revisit specific concepts. The codebase is primarily written in **JavaScript** with some **HTML** for frontend interaction demos.
+This repository contains all exercises, examples, and mini-projects developed as part of the Capgemini full-stack training curriculum, focusing on the MERN stack. It is structured by technology and session date, making it easy to trace learning progress and revisit specific concepts. The codebase includes backend APIs, database operations, and frontend React applications.
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS/
+Capgemini-MERN/
 │
 ├── MongoDB/
 │   └── 05-05-2026/         # MongoDB concepts, queries, CRUD operations
@@ -22,6 +22,16 @@ Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS/
 │   └── 06-05-2026/         # Node.js fundamentals, modules, file system, etc.
 │
 ├── Express js/             # Express.js routing, middleware, REST API concepts
+│
+├── 08-05-2026-React-Assessment/
+│   └── mega-sale-page/     # React application for mega sale page
+│
+├── E-Commerce/             # Full MERN stack e-commerce application
+│   ├── app.js
+│   ├── server.js
+│   ├── config/
+│   ├── models/
+│   └── ...
 │
 ├── .gitignore
 └── README.md
@@ -33,11 +43,12 @@ Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS/
 
 | Technology | Purpose |
 |---|---|
+| **MongoDB** | NoSQL database for storing and querying documents |
 | **Node.js** | JavaScript runtime for server-side development |
 | **Express.js** | Web framework for building REST APIs and handling HTTP requests |
-| **MongoDB** | NoSQL database for storing and querying documents |
-| **JavaScript** | Primary programming language (93.9%) |
-| **HTML** | Basic frontend templates for testing APIs (6.1%) |
+| **React** | Frontend library for building user interfaces |
+| **JavaScript** | Primary programming language |
+| **HTML/CSS** | Markup and styling for frontend components |
 
 ---
 
@@ -65,6 +76,14 @@ Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS/
 - Building RESTful APIs
 - Error handling
 
+### ⚛️ React
+- Component-based architecture
+- JSX syntax and rendering
+- State management with hooks (useState, useEffect)
+- Props and component communication
+- Building interactive UIs
+- Vite for development and building
+
 ---
 
 ## ⚙️ Getting Started
@@ -84,7 +103,7 @@ Make sure you have the following installed:
 git clone https://github.com/cser-naivedya-raj/Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS.git
 
 # 2. Navigate into the project folder
-cd Capgemini-Backend-with-MongoDB-NodeJs-ExpressJS
+cd "Capgemini MERN"
 
 # 3. Navigate to a specific module (e.g., Express js)
 cd "Express js"
@@ -112,13 +131,23 @@ mongosh
 
 ## 🧪 Usage
 
-Each folder is self-contained and corresponds to a specific training session or topic. Navigate to the relevant directory and run the JavaScript files directly with Node.js:
+Each folder is self-contained and corresponds to a specific training session or topic. 
 
-```bash
-node filename.js
-```
+- For backend modules (MongoDB, Node.js, Express.js): Navigate to the relevant directory and run the JavaScript files directly with Node.js:
+  ```bash
+  node filename.js
+  ```
 
-For Express.js servers, open your browser or use a tool like **Postman** / **Thunder Client** to test the API endpoints at:
+- For React applications: Navigate to the project folder, install dependencies, and start the development server:
+  ```bash
+  cd 08-05-2026-React-Assessment/mega-sale-page
+  npm install
+  npm run dev
+  ```
+
+- For full-stack projects like E-Commerce: Follow the specific README or run the server and client separately.
+
+For Express.js servers and full-stack apps, open your browser or use a tool like **Postman** / **Thunder Client** to test the API endpoints at:
 
 ```
 http://localhost:3000
@@ -135,7 +164,7 @@ http://localhost:3000
 
 ## 🏢 Training Context
 
-This repository is part of the **Capgemini** internal backend development training program. Content is organized by date and technology to reflect real-time learning sessions.
+This repository is part of the **Capgemini** internal full-stack development training program. Content is organized by date and technology to reflect real-time learning sessions.
 
 ---
 
