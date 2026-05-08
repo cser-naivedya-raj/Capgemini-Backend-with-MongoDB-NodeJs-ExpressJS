@@ -1,13 +1,18 @@
+// Import required modules
+// Required modules import kar rahe hain
 const http = require("http");
 const { MongoClient } = require("mongodb");
 
+// MongoDB connection constants
+// MongoDB connection ke constants
 const MONGO_URI = "mongodb://127.0.0.1:27017";
 const DB_NAME = "nodeAssignment";
 const COLLECTION_NAME = "users";
 
 let collection;
 
-// Parse request body
+// Function to parse JSON request body
+// JSON request body parse karne ka function
 function parseBody(req) {
   return new Promise((resolve, reject) => {
     let body = "";
@@ -28,7 +33,8 @@ function parseBody(req) {
   });
 }
 
-// Send JSON response
+// Function to send JSON response
+// JSON response bhejne ka function
 function sendResponse(res, statusCode, data) {
   res.writeHead(statusCode, {
     "Content-Type": "application/json",
@@ -37,6 +43,8 @@ function sendResponse(res, statusCode, data) {
   res.end(JSON.stringify(data, null, 2));
 }
 
+// Create HTTP server
+// HTTP server create kar rahe hain
 const server = http.createServer(async (req, res) => {
   const url = req.url;
   const method = req.method;
@@ -46,6 +54,7 @@ const server = http.createServer(async (req, res) => {
 
   try {
     // Home Route
+    // Home Route
     if (url === "/" && method === "GET") {
       return sendResponse(res, 200, {
         message: "Welcome to Node.js CRUD API",
@@ -53,6 +62,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // GET All Users
+    // Sare Users GET karo
     if (url === "/users" && method === "GET") {
       const users = await collection.find({}).toArray();
 
@@ -62,7 +72,8 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // GET Single User
+    // GET Single User by ID
+    // Single User by ID GET karo
     if (parts[1] === "users" && method === "GET" && id) {
       const user = await collection.findOne({ id: id });
 
@@ -79,7 +90,8 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // POST User
+    // POST Create New User
+    // Naya User POST karo
     if (url === "/users" && method === "POST") {
       const body = await parseBody(req);
 
@@ -102,7 +114,8 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // PUT User
+    // PUT Replace User by ID
+    // User ko PUT se replace karo by ID
     if (parts[1] === "users" && method === "PUT" && id) {
       const body = await parseBody(req);
 
@@ -123,7 +136,8 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // PATCH User
+    // PATCH Update User by ID
+    // User ko PATCH se update karo by ID
     if (parts[1] === "users" && method === "PATCH" && id) {
       const body = await parseBody(req);
 
@@ -142,7 +156,8 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // DELETE User
+    // DELETE User by ID
+    // User ko DELETE karo by ID
     if (parts[1] === "users" && method === "DELETE" && id) {
       const result = await collection.deleteOne({ id: id });
 
@@ -160,6 +175,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Invalid Route
+    // Invalid Route
     sendResponse(res, 404, {
       success: false,
       message: "Route not found",
@@ -172,7 +188,8 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-// Connect MongoDB and Start Server
+// Function to connect to MongoDB and start the server
+// MongoDB connect karo aur server start karo ka function
 async function startServer() {
   try {
     const client = new MongoClient(MONGO_URI);
@@ -193,4 +210,6 @@ async function startServer() {
   }
 }
 
+// Start the server
+// Server start karo
 startServer();
