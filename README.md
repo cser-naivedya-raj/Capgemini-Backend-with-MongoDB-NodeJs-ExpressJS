@@ -6,34 +6,84 @@
 
 ## 📌 Description
 
-This repository contains all exercises, examples, and mini-projects developed as part of the Capgemini full-stack training curriculum, focusing on the MERN stack. It is structured by technology and session date, making it easy to trace learning progress and revisit specific concepts. The codebase includes backend APIs, database operations, and frontend React applications.
+This repository contains all exercises, examples, and mini-projects developed as part of the Capgemini full-stack training curriculum, focusing on the MERN stack. It is structured by technology and session date (starting from May 5, 2026), making it easy to trace learning progress and revisit specific concepts. 
+
+The codebase includes:
+- **MongoDB fundamentals** — CRUD operations, queries, and data modeling
+- **Node.js** — Core modules, event loop, asynchronous programming
+- **Express.js** — REST APIs, routing, middleware, and authentication
+- **React** — Component-based UI development with Vite
+- **Full-stack projects** — Complete E-Commerce application with database integration and Socket.io support
+- **Class & Home Assignments** — Hands-on exercises with progressive complexity
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-Capgemini-MERN/
+Capgemini MERN/
 │
 ├── MongoDB/
-│   └── 05-05-2026/         # MongoDB concepts, queries, CRUD operations
+│   └── 05-05-2026/
+│       ├── Class_Assignment_and_notes_05_05_2026.js
+│       └── Home_Assignment_05_05_2026.md
 │
 ├── Node js/
-│   └── 06-05-2026/         # Node.js fundamentals, modules, file system, etc.
+│   └── 06-05-2026/
+│       ├── Class Assignment/
+│       │   ├── EventEmitter.js
+│       │   ├── EventLoop.js
+│       │   ├── fsModule/
+│       │   └── Http routings/
+│       └── Home Assignment/
 │
-├── Express js/             # Express.js routing, middleware, REST API concepts
+├── Express js/
+│   ├── 06-05-2026 - express server creation/
+│   │   ├── package.json
+│   │   └── server.js
+│   ├── 07-05-2026/
+│   │   ├── Class Assignment/
+│   │   │   ├── Integration with MongoDb/
+│   │   │   └── Routings/
+│   │   └── Home Assignment/
+│   ├── 08-05-2026/
+│   │   ├── Class Assignments/
+│   │   └── Home Assignments/
+│   ├── 11-05-2026/
+│   │   ├── Class Assignment/
+│   │   │   ├── E-Commerce/
+│   │   │   └── Socket.io/
+│   │   └── Home Assignment/
+│   │       └── E-Commerce/
+│   ├── 12-05-2026/
+│   │   └── Class Assignment/
+│   │       └── E-Commerce/
+│   └── E-Commerce/          # Full MERN stack e-commerce app
+│       ├── app.js
+│       ├── server.js
+│       ├── config/
+│       ├── controllers/
+│       ├── middleware/
+│       ├── models/
+│       ├── routes/
+│       └── utils/
 │
 ├── 08-05-2026-React-Assessment/
-│   └── mega-sale-page/     # React application for mega sale page
+│   └── mega-sale-page/       # React Vite application
+│       ├── package.json
+│       ├── vite.config.js
+│       ├── index.html
+│       ├── public/
+│       └── src/
+│           ├── components/
+│           ├── assets/
+│           ├── App.jsx
+│           └── main.jsx
 │
-├── E-Commerce/             # Full MERN stack e-commerce application
-│   ├── app.js
-│   ├── server.js
-│   ├── config/
-│   ├── models/
-│   └── ...
+├── E-Commerce/
+│   └── routes/
+│       └── authRoutes.js
 │
-├── .gitignore
 └── README.md
 ```
 
@@ -131,26 +181,55 @@ mongosh
 
 ## 🧪 Usage
 
-Each folder is self-contained and corresponds to a specific training session or topic. 
+Each folder is organized by date and technology, with class and home assignments clearly separated.
 
-- For backend modules (MongoDB, Node.js, Express.js): Navigate to the relevant directory and run the JavaScript files directly with Node.js:
-  ```bash
-  node filename.js
-  ```
+### MongoDB Sessions
+```bash
+cd MongoDB/05-05-2026
+node Class_Assignment_and_notes_05_05_2026.js
+```
 
-- For React applications: Navigate to the project folder, install dependencies, and start the development server:
-  ```bash
-  cd 08-05-2026-React-Assessment/mega-sale-page
-  npm install
-  npm run dev
-  ```
+### Node.js Sessions
+```bash
+cd "Node js/06-05-2026/Class Assignment"
+node EventEmitter.js
+# or explore other modules like EventLoop.js, fsModule, Http routings
+```
 
-- For full-stack projects like E-Commerce: Follow the specific README or run the server and client separately.
+### Express.js Sessions
+Navigate to the specific date folder and run the server:
+```bash
+cd "Express js/11-05-2026/Class Assignment/E-Commerce"
+npm install
+node server.js
+```
 
-For Express.js servers and full-stack apps, open your browser or use a tool like **Postman** / **Thunder Client** to test the API endpoints at:
+### React Application (Mega Sale Page)
+```bash
+cd "08-05-2026-React-Assessment/mega-sale-page"
+npm install
+npm run dev
+```
 
+The development server will start at `http://localhost:5173` (Vite default)
+
+### E-Commerce Full-Stack Application
+```bash
+cd "Express js/E-Commerce"
+npm install
+node server.js
+```
+
+Then open your browser or use **Postman** / **Thunder Client** to test API endpoints at:
 ```
 http://localhost:3000
+```
+
+For real-time features (Socket.io):
+```bash
+cd "Express js/11-05-2026/Class Assignment/Socket.io"
+npm install
+node server.js
 ```
 
 ---
